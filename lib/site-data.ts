@@ -1,8 +1,8 @@
 export const company = {
   name: "Integron Technology",
   tagline: "Smart Integrated Solutions",
-  email: "hello@yourcompany.com",
-  phone: "+20 10 0000 0000",
+  email: "amr232948@gmail.com",
+  phone: "01024380714",
   location: "Cairo, Egypt",
   social: {
     facebook: "https://facebook.com",
