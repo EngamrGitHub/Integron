@@ -21,8 +21,17 @@ export default async function PortfolioDetails(props: any) {
       </Link>
 
       <div className="mt-6 overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-soft">
-        <div className="relative h-[320px] w-full">
-          <Image src={item.image} alt={item.title} fill className="object-cover" priority />
+        <div className="relative w-full overflow-hidden bg-neutral-50 p-4 sm:p-8">
+          <div className="mx-auto block">
+            <Image
+              src={item.image}
+              alt={item.title}
+              width={1200}
+              height={800}
+              className="h-auto w-full rounded-xl object-contain shadow-soft"
+              priority
+            />
+          </div>
         </div>
 
         <div className="p-8">
