@@ -7,8 +7,9 @@ export function generateStaticParams() {
   return portfolioItems.map((i) => ({ slug: i.slug }));
 }
 
-export default function PortfolioDetails({ params }: { params: { slug: string } }) {
-  const item = portfolioItems.find((i) => i.slug === params.slug);
+export default async function PortfolioDetails({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const item = portfolioItems.find((i) => i.slug === slug);
   if (!item) return notFound();
 
   return (
