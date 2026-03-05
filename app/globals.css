@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+body {
+  @apply bg-white text-neutral-900 antialiased;
+}
+
+::selection {
+  @apply bg-blue-800 text-white;
+}
+
+.container {
+  @apply mx-auto max-w-6xl px-4;
+}
