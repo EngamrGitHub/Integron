@@ -7,8 +7,10 @@ export function generateStaticParams() {
   return portfolioItems.map((i) => ({ slug: i.slug }));
 }
 
-export default async function PortfolioDetails({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function PortfolioDetails(props: any) {
+  const params = await props.params;
+  const searchParams = await props.searchParams;
+  const { slug } = params;
   const item = portfolioItems.find((i) => i.slug === slug);
   if (!item) return notFound();
 
