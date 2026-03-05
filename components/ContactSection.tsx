@@ -17,7 +17,7 @@ export default function ContactSection() {
 
     const formData = new FormData(formElement);
     const payload = {
-      access_key: "YOUR_ACCESS_KEY_HERE", // Get one at https://web3forms.com (free)
+      access_key: "552bc104-2cbd-4b70-a9b6-1234618a731f",
       name: String(formData.get("name") || ""),
       email: String(formData.get("email") || ""),
       company: String(formData.get("company") || ""),
@@ -28,16 +28,6 @@ export default function ContactSection() {
     };
 
     try {
-      // If no key is provided, we'll use a mock success for now to avoid the error UI
-      if (payload.access_key === "YOUR_ACCESS_KEY_HERE") {
-        console.log("Form data (would be sent to Web3Forms):", payload);
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate delay
-        setStatus("sent");
-        setMsg("Thanks! We received your message and will get back to you shortly.");
-        formElement.reset();
-        return;
-      }
-
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
